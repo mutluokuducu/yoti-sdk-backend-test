@@ -1,0 +1,3 @@
+rootProject.name = 'yoti-sdk-backend-test'
+
+include 'service', 'component-test'

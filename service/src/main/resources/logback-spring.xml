@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+  <appender class="ch.qos.logback.core.ConsoleAppender" name="CONSOLE">
+    <springProfile name="!dev">
+      <encoder class="net.logstash.logback.encoder.LogstashEncoder"/>
+    </springProfile>
+    <springProfile name="dev">
+      <encoder>
+        <Pattern>[%d{yyyy-MM-dd HH:mm:ss}] [%thread] %-5level %logger{36}.%M - [%X{X-B3-TraceId:-}
+          %X{X-B3-SpanId:-} %X{X-Span-Export:-}] %msg%n
+        </Pattern>
+      </encoder>
+    </springProfile>
+  </appender>
+
+  <root level="${APP_LOG_LEVEL}">
+    <appender-ref ref="CONSOLE"/>
+  </root>
+
+  <variable name="APP_LOG_LEVEL" value="${LOG_LEVEL:-INFO}"/>
+</configuration>
