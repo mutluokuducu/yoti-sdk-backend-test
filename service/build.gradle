@@ -53,11 +53,8 @@ dependencies {
     implementation libs.springBootWeb
     implementation libs.springfoxSwagger2
     implementation libs.springfoxSwaggerUi
-    implementation libs.springCloudFeign
-    implementation libs.feignokhttp
     implementation libs.logStash
 
-    api libs.mapstructs
     api libs.commonLib
     api libs.lombok
     api libs.jackson
@@ -70,8 +67,6 @@ dependencies {
 
     compileOnly libs.lombok
     annotationProcessor libs.lombok
-    annotationProcessor libs.mapstructsProcessor
-
     testImplementation libs.wiremock
     // Junit 5
     testImplementation libs.junitJupiterApi

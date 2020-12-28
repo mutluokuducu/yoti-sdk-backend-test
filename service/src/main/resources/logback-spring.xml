@@ -14,7 +14,7 @@
     </springProfile>
   </appender>
 
-  <root level="${APP_LOG_LEVEL}">
+  <root level="info">
     <appender-ref ref="CONSOLE"/>
   </root>
 
